@@ -1,26 +1,44 @@
+(function() {
 'use strict'; // ES6 - строгий режим
 
-var a = 5;
-console.log(a);
-var leftBorderWidth = 1;
-let _new = 2;
-const pi = 3.14;
+    let appData = {
+        'budget': get_budget(),
+        'time': get_date(),
+        'expenses': get_expenses_obj(), 
+        'optional_expenses': {},
+        'income': Array(),
+        'savings': false
+    };
 
-let persone = {
-    name: 'John',
-    age: 25,
-    isMarried: false
-};
+    function get_budget() {
+         let res_budget = prompt('Ваш бюджет на месяц?', '');
+         return res_budget;
+    }
+    function get_date() {
+        let res_date = prompt('Введите дату в формате YYYY-MM-DD', '');
+        return res_date;
+    }
+    function get_expenses_obj() {
+        let first_obj = '',
+            second_obj = '',
+            res_obj = {};
+            for ( var i = 0; i < 2; i++ ) {
+                first_obj = prompt('Введите обязательную статью расходов в этом месяце', '');
+                second_obj = prompt('Во сколько обойдется', '');
+                res_obj[first_obj] = second_obj;
+            }
+        return res_obj;
+    }
+    function show_budget() {
+        let max_days = 30,
+        bugget_oneday = appData.budget/max_days;
+        console.log(appData);
+        alert('Бюджет на 1 день '+bugget_oneday);
+    
+    }
+    show_budget();
 
-function start() {
-    console.log('js is working');
-    console.log(leftBorderWidth);
-    console.log( _new );
-    console.log( pi );
-}
-//start();
-function start2($obj) {
-    console.log($obj);
-   // alert('how are you?');
-}
-// start2(persone.name);
+  
+    
+})();
+
