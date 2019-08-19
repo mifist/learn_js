@@ -1,23 +1,17 @@
 (function() {
 'use strict'; // ES6 - строгий режим
 
-    let appData = {
-        'budget': get_budget(),
-        'time': get_date(),
-        'expenses': get_expenses_obj(), 
-        'optional_expenses': {},
-        'income': Array(),
-        'savings': false
-    };
+    let money = prompt('Ваш бюджет на месяц?', ''),
+        time = prompt('Введите дату в формате YYYY-MM-DD', ''),
+        appData = {
+            budget: money,
+            time_date: time,
+            expenses: get_expenses_obj(), 
+            optional_expenses: {},
+            income: Array(),
+            savings: false
+        };
 
-    function get_budget() {
-         let res_budget = prompt('Ваш бюджет на месяц?', '');
-         return res_budget;
-    }
-    function get_date() {
-        let res_date = prompt('Введите дату в формате YYYY-MM-DD', '');
-        return res_date;
-    }
     function get_expenses_obj() {
         let first_obj = '',
             second_obj = '',
@@ -33,12 +27,10 @@
         let max_days = 30,
         bugget_oneday = appData.budget/max_days;
         console.log(appData);
-        alert('Бюджет на 1 день '+bugget_oneday);
-    
+        alert('Бюджет на 1 день: '+bugget_oneday); 
     }
+    
     show_budget();
-
-  
     
 })();
 
