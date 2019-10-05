@@ -1,8 +1,8 @@
 const arr = ['1', '2', '3', '4'];
 const res = arr
-.map( (el) => parseInt(el) )
-.filter( (num) => num%2 )
-.reduce( (max, val) => Math.max(max, val), 0 );
+.map( (el) => parseInt(el) ) // преопразовние в числа
+.filter( (num) => num%2 ) // не четные
+.reduce( (max, val) => Math.max(max, val), 0 ); // поиск большего числа
 console.log(res);
 
 // testing 'Rest' param
@@ -21,4 +21,5 @@ console.log(res2);
 const shallowCopy = [ ... arr2, ... arr3, 568 ];
 console.log(shallowCopy);
 
+/*------- Destructuring - Деструктуризация -------*/
 
