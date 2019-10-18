@@ -140,3 +140,45 @@ console.log(tmplHTML);
         <li>undefined</li>
     </ul>
 */
+
+/*------- Objects - Объекты -------*/
+console.log('Objects - Объекты');
+
+// add prefix in the name of object keys
+const prefix = 'pr_';
+const obj = {
+    [prefix + 'name'] : 'Bob',
+    [prefix + 'age'] : 27
+};
+console.log(obj);
+// console.log --> { pr_name: 'Bob', pr_age: 27 }
+
+// copy data from first object to the anothe with highest priority
+const defaults = {
+    host: 'localhost',
+    dbName: 'blog',
+    user: 'admin'
+};
+const admin = {
+    user: 'daria',
+    pasword: 'qwerty'
+};
+
+//Object.assign(defaults, admin);
+/* console.log -->
+    defaults = { host: 'localhost',
+    dbName: 'blog',
+    user: 'daria',
+    pasword: 'qwerty' }
+*/
+
+const assignRes = Object.assign({}, defaults, admin);
+console.log(defaults);
+// console.log --> { host: 'localhost', dbName: 'blog', user: 'admin' }
+console.log(assignRes);
+/* console.log -->
+    { host: 'localhost',
+    dbName: 'blog',
+    user: 'daria',
+    pasword: 'qwerty' }
+*/
