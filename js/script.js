@@ -22,7 +22,7 @@ const shallowCopy = [ ... arr2, ... arr3, 568 ];
 console.log(shallowCopy);
 
 /*------- Destructuring - Деструктуризация -------*/
-
+console.log('Destructuring - Деструктуризация');
 /*=---- Objects ----=*/
 
 const person = {
@@ -111,3 +111,32 @@ console.log(res_dict);
 // console.log --> [ [ 'mouse', 'squeak' ], [ 'humster', 'squeak' ] ]
 /* -3- */
 // console.log --> [ 'mouse', 'humster' ]
+
+
+/*------- Template Literals - Шаблонные строки -------*/
+console.log('Template strings - Шаблонные строки');
+
+const user = 'Bob';
+const num = 34;
+const txt = 'Lorem ipsum '+user+' dolor sit amet consectetur adipisicing elit. '+num;
+const txt2 = `Hello ${user} you are have the ${num}$`;
+console.log(txt);
+console.log(txt2);
+
+//----------------------------
+const items = ['tes', 'coffee', 'other'];
+const tmplHTML = `
+    <ul>
+        <li>${items[0]}</li>
+        <li>${items[1]}</li>
+        <li>${items[3]}</li>
+    </ul>
+`;
+console.log(tmplHTML);
+/* console.log -->
+    <ul>
+        <li>tes</li>
+        <li>coffee</li>
+        <li>undefined</li>
+    </ul>
+*/
